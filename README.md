@@ -12,7 +12,7 @@ python3 -m pip install -r requirements.txt
 ``` 
 > 💡 Note: use `python` instead of `python3` if you're running this on Windows.
 
-### Running
+### 🏃 Running
 
 To run the program, you just need to run the `main.py` file in the root directory of this repository. Running this from the command line is preferred, as it will not close the command line when an error occurs.
 ```sh
