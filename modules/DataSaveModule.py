@@ -38,9 +38,15 @@ class DataSaveModule(object):
     overwrite_behaviour : Literal["skip", "overwrite"] = 'overwrite'
 
 
+    def ensure_out_exists(self) -> None:
+        
+        if not os.path.exists(self.out_path):
+            os.makedirs(self.out_path)
 
     def fs_ensure_free_channel_path(self, channel : Channel, *, overwrite : bool = True) -> bool:
         
+        self.ensure_out_exists()
+
         p = os.path.join(self.out_path, "%s.json" % channel.handle.lower())
 
         if os.path.exists( p ):
