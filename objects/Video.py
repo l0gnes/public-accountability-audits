@@ -68,8 +68,8 @@ class Video(object):
             viewable_stats = response['status']['publicStatsViewable'],
             for_kids = response['status']['madeForKids'],
             view_count = response['statistics']['viewCount'],
-            like_count = response['statistics']['likeCount'],
-            comment_count = response['statistics'].get('commentCount', -1), # -1 --> Comments are Disabled
+            like_count = response['statistics'].get('likeCount', -1),       # -1 --> Likes are hidden
+            comment_count = response['statistics'].get('commentCount', -1), # -1 --> Comments are hidden
             video_topics = response.get('topicDetails', {}).get('topicCategories', []),
             recording_date = response['recordingDetails'].get("recordingDate", None),
             live_start_time = response.get('liveStreamingDetails', {}).get('actualStartTime', None),
