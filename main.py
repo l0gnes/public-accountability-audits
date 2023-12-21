@@ -57,7 +57,8 @@ class YoutubeDataScraper(object):
     def channel_data_pull_loop(self, channel_handle : str) -> None:
 
         # First, fetch the channel id from YouTube, as you cannot directly pull channel data without it
-        channel_id = self.DATA_PULL_MODULE.fetch_channel_id_from_handle(channel_handle)
+        # NOTE(12/21, 2023): New function implementation allows for direct id supplement via an '/c/' prefix 
+        channel_id = self.DATA_PULL_MODULE.grab_channel_id_from_string(channel_handle)
 
         # Create a `Channel` instance, from the data pulled with the `channel_id`
         channel : "Channel" = self.DATA_PULL_MODULE.fetch_channel_from_id(channel_id)

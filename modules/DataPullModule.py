@@ -16,7 +16,11 @@ class DataPullModule(object):
     def __init__(self, yt) -> None:
         self.YOUTUBE_CLIENT = yt
 
-
+    def grab_channel_id_from_string(self, s : str) -> Union[str, None]:
+        if s.startswith('/c/'):
+            return s[3:]
+        else:
+            return self.fetch_channel_id_from_handle(s)
 
     def fetch_channel_id_from_handle(self, handle : str) -> Union[str, None]:
 

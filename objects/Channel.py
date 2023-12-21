@@ -25,7 +25,7 @@ class Channel(object):
 
     @classmethod
     def construct_from_response(cls, response : dict) -> "Channel":
-        
+
         x = cls(
             channel_id = response['id'],
             title = response['snippet']['title'],
